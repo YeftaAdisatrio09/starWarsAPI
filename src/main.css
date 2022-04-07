@@ -1,0 +1,9 @@
+body {
+    background: #222;
+    color: #fff;
+    font-family: sans-serif;
+}
+
+.app_container {
+    padding: 50px 20px;
+}
