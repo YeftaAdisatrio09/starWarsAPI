@@ -1,19 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import Home from "./Components/Pages/Home";
+import Movie from "./Components/Pages/Movie";
 
 import "./main.css";
 
 import Header from "./Components/Header/Header";
-import SearchBar from "./Components/SearchBar/SearchBar";
-import Result from "./Components/Result/Result";
 
 const App = () => {
-    const [movieList, setMovieList] = useState([]);
-
     return (
         <div className="app_container">
-            <Header />
-            <SearchBar setMovieList={setMovieList} />
-            <Result movieList={movieList} />
+            <BrowserRouter>
+                <Header />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/movie/:id" element={<Movie />} />
+                </Routes>
+            </BrowserRouter>
         </div>
     );
 };

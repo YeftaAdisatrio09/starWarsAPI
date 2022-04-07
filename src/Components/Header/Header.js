@@ -1,9 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import style from "./header.module.css";
 
 const Header = () => {
-    return <img src="/images/logo.png" alt="star Wars" className={style.logo} />;
+    return (
+        <Link to="/">
+            <img src="/images/logo.png" alt="star Wars" className={style.logo} />
+        </Link>
+    );
 };
 
 export default Header;
