@@ -3,13 +3,14 @@ import React from "react";
 import MovieCard from "./MovieCard";
 import style from "./result.module.css";
 
-const Result = () => {
+const Result = (props) => {
     return (
         <div className={style.result_container}>
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
+            {props.movieList.length <= 0 && <h4>No Movies At The Moment</h4>}
+            {props.movieList.length > 0 &&
+                props.movieList.map((movie, index) => {
+                    return <MovieCard movie={movie} key={index} />;
+                })}
         </div>
     );
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./main.css";
 
@@ -7,11 +7,13 @@ import SearchBar from "./Components/SearchBar/SearchBar";
 import Result from "./Components/Result/Result";
 
 const App = () => {
+    const [movieList, setMovieList] = useState([]);
+
     return (
         <div className="app_container">
             <Header />
-            <SearchBar />
-            <Result />
+            <SearchBar setMovieList={setMovieList} />
+            <Result movieList={movieList} />
         </div>
     );
 };
